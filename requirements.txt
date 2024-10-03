@@ -2,4 +2,4 @@ panda
 matplotlib
 streamlit
 numpy
-python3
+
