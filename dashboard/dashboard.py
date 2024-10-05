@@ -6,6 +6,8 @@ load = pd.read_csv("dashboard/main_data.csv")
 
 day_df = pd.DataFrame(load)
 
+day_df['is_weekend'] = day_df['weekday'].apply(lambda x: 1 if x in [0, 6] else 0)
+
 grouped_df = day_df.groupby('is_weekend').agg({
     'registered': 'sum'
 }).reset_index()
